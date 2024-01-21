@@ -1,0 +1,75 @@
+body {
+  background-color: #4da1a9;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.searchCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #2e5077;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.book-card {
+  background-color: #611c35;
+  color: whitesmoke;
+  max-width: 400px;
+  border-radius: 16px;
+  padding: 8px;
+}
+.book-card:hover {
+  background-color: rgb(141, 209, 39);
+}
+
+.search-bar-container {
+  display: flex;
+}
+
+.main-landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.landing-heading {
+  font-size: 56px;
+}
+
+.landing-para {
+  font-size: large;
+  font-weight: 700;
+}
+
+#searchBar {
+  background-color: #2e5077;
+  border: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  color: whitesmoke;
+  height: 16px;
+  padding: 8px;
+}
+#searchBar::-moz-placeholder {
+  color: whitesmoke;
+}
+#searchBar::placeholder {
+  color: whitesmoke;
+}
+#searchBar:focus {
+  border: none;
+  background-color: whitesmoke;
+  color: #2e5077;
+  font-weight: 500;
+  outline: none;
+}/*# sourceMappingURL=styles.css.map */
