@@ -2,11 +2,13 @@ import SearchBar from "../SearchBar/SearchBar";
 import logo from "../../img/jack_logo.png";
 const Navbar = () => {
   return (
-    <nav>
-      {/* <img src={logo} alt="Signiture Logo" />{" "} */}
-      <h1 className="nav-heading">LitLounge</h1>
-      {/**doesnt need to be signature logo or could put sig in footer */}
-      <SearchBar />
+    <nav className="nav-bar">
+      <div className="nav-search-bar-container">
+        <h1 className="nav-heading">LitLounge</h1>
+        {/**doesnt need to be signature logo or could put sig in footer */}
+        <SearchBar />
+      </div>
+      <img src={logo} alt="Signiture Logo" height={"54px"} />
     </nav>
   );
 };
