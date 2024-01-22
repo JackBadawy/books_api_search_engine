@@ -16,10 +16,10 @@ const SearchBar = () => {
   } = useContext(SearchContext);
 
   return (
-    <div className="search-bar-container">
+    <div className="search__bar__container">
       <input
         type="text"
-        id="searchBar"
+        className="search__bar"
         placeholder="Search Here"
         onChange={(event) => {
           setSearchString(event.target.value);
@@ -31,7 +31,7 @@ const SearchBar = () => {
           setBookListReady(false);
         }}
         to={"/search"}
-        className="search-btn"
+        className="search__btn"
       >
         <img src="src\img\searchIcon.png" alt="" height="18px" />
       </Link>

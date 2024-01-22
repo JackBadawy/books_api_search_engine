@@ -17,19 +17,8 @@ const BookList = () => {
     setBookListReady,
   } = useContext(SearchContext);
 
-  //we need to render a single card for now that displays first book as test, pass booklist data as brops to bookCard
-
-  //old implementation
-  /* <BookCard
-            key={book.id}
-            title={book.volumeInfo.title}
-            image={book.volumeInfo.imageLinks.thumbnail}
-            author={book.volumeInfo.authors.join(" & ")}
-            description={book.volumeInfo.description}
-          /> */
-
   return (
-    <main className="searchCardContainer">
+    <main className="search__card-container">
       {!bookListReady ? (
         <p>Loading...</p>
       ) : (

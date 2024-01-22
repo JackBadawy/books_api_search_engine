@@ -24,7 +24,7 @@ const BookCard = (props) => {
       : "No description available";
 
   return (
-    <div className="book-card" onClick={handleCardClick}>
+    <div className="search__book-card" onClick={handleCardClick}>
       <img src={imageSource} alt={props.title} />
       <div className="book-info-container">
         <h4>{props.title}</h4>

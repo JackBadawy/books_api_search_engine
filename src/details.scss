@@ -1,0 +1,54 @@
+$color-one: #d5fcff;
+$color-two: #274464;
+$color-three: #611c35;
+
+.details {
+  &__thumbnail {
+    border: 3px solid $color-two;
+    border-radius: 8px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__return {
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    &__btn {
+      width: 180px;
+      padding: 2px;
+      border-radius: 8px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      background-color: $color-two;
+      color: whitesmoke;
+      text-decoration: none;
+      height: 24px;
+      &:visited {
+        text-decoration: none;
+      }
+      &:hover {
+        background-color: whitesmoke;
+        color: $color-two;
+      }
+    }
+  }
+  &__container {
+    margin-top: 8px;
+    &__text {
+      background-color: $color-two;
+      color: whitesmoke;
+      padding: 2px;
+      border-radius: 8px;
+      padding-left: 8px;
+      margin-top: 8px;
+    }
+  }
+}

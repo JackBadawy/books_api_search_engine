@@ -9,9 +9,9 @@ const LandingPage = () => {
       <header>
         <img src={logo} alt="" />
       </header>
-      <main className="main-landing-page">
-        <h1 className="landing-heading">LitLounge</h1>
-        <p className="landing-para">
+      <main className="landing-page">
+        <h1 className="landing-page__heading">LitLounge</h1>
+        <p className="landing-page__para">
           Welcome to the LitLounge! please search a book to get started
         </p>
         <SearchBar />

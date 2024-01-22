@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import * as styles from "../styles.scss";
+import * as details from "../details.scss";
 import logo from "../img/jack_logo.png";
 
 const BookDetailsPage = () => {
@@ -10,12 +11,12 @@ const BookDetailsPage = () => {
   console.log(title);
   return (
     <div className="display_page_container">
-      <span className="book-details-nav">
-        <div className="details-return-container">
-          <h1 className="details-heading">LitLounge</h1>
+      <span className="details__nav">
+        <div className="details__return__container">
+          <h1 className="details__heading">LitLounge</h1>
           <Link
             to="/search"
-            className="details-return-btn"
+            className="details__return__btn"
             id="details-return-btn"
           >
             Return to Search Page
@@ -23,9 +24,9 @@ const BookDetailsPage = () => {
         </div>
         <img src={logo} alt="" height={"54px"} />
       </span>
-      <div className="details-container">
-        <img src={image} alt={title} className="details-thumbnail" />
-        <div className="details-container-text">
+      <div className="details__container">
+        <img src={image} alt={title} className="details__thumbnail" />
+        <div className="details__container__text">
           <h4>Title: {title}</h4>
           <p>Author: {author}</p>
           <p>Description: {description}...</p>
