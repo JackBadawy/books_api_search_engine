@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { NavLink, Navigate, Link } from "react-router-dom";
 import { SearchContext } from "../../Context/SearchContext";
 import * as styles from "../../styles.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const SearchBar = () => {
   const {
@@ -33,7 +35,7 @@ const SearchBar = () => {
         to={"/search"}
         className="search__btn"
       >
-        <img src="src\img\searchIcon.png" alt="" height="18px" />
+        <FontAwesomeIcon icon={faSearch} className="search__btn__icon" />
       </Link>
     </div>
   );

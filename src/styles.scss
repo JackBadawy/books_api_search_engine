@@ -46,6 +46,9 @@ body {
     border: 3px solid $color-two;
     padding-left: 8px;
     padding-right: 8px;
+    &__icon {
+      color: $color-two;
+    }
   }
   &__book-card {
     background-color: $color-two;
