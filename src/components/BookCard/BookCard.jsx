@@ -6,11 +6,8 @@ const BookCard = (props) => {
   const navigate = useNavigate();
 
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const day = date.getDate().toString().padStart(2, "0");
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
   const handleCardClick = () => {

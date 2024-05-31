@@ -20,14 +20,13 @@ const SearchPage = () => {
   }, [updateSearchTerm]);
 
   useEffect(() => {
-    getBookList(searchTerm).then((results) => {
-      setBookList(results.items);
-      setBookListReady(true);
-    });
+    if (searchTerm.trim() !== "") {
+      getBookList(searchTerm).then((results) => {
+        setBookList(results.items);
+        setBookListReady(true);
+      });
+    }
   }, [searchTerm]);
-  useEffect(() => {
-    console.log("from book list", bookList);
-  }, [bookList]);
 
   return (
     <div>
