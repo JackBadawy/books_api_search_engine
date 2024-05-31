@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import * as styles from "../styles.scss";
 import * as details from "../details.scss";
@@ -6,9 +5,9 @@ import logo from "../img/jack_logo.png";
 
 const BookDetailsPage = () => {
   const location = useLocation();
-  const { title, author, description, image } = location.state || {};
+  const { title, author, description, image, publishedDate } =
+    location.state || {};
 
-  console.log(title);
   return (
     <div className="display_page_container">
       <span className="details__nav">
@@ -29,7 +28,8 @@ const BookDetailsPage = () => {
         <div className="details__container__text">
           <h4>Title: {title}</h4>
           <p>Author: {author}</p>
-          <p>Description: {description}...</p>
+          <p>Published: {publishedDate}</p>
+          <p>Description: {description}</p>
         </div>
       </div>
     </div>

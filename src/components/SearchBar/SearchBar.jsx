@@ -1,5 +1,5 @@
-import { useState, useContext } from "react";
-import { NavLink, Navigate, Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../Context/SearchContext";
 import * as styles from "../../styles.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,15 +7,26 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const SearchBar = () => {
   const {
-    searchTerm,
-    setSearchTerm,
     searchString,
     setSearchString,
     updateSearchTerm,
     setUpdateSearchTerm,
-    bookListReady,
     setBookListReady,
   } = useContext(SearchContext);
+
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    setUpdateSearchTerm(!updateSearchTerm);
+    setBookListReady(false);
+    navigate("/search");
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
 
   return (
     <div className="search__bar__container">
@@ -26,17 +37,11 @@ const SearchBar = () => {
         onChange={(event) => {
           setSearchString(event.target.value);
         }}
+        onKeyDown={handleKeyDown}
       />
-      <Link
-        onClick={() => {
-          setUpdateSearchTerm(!updateSearchTerm);
-          setBookListReady(false);
-        }}
-        to={"/search"}
-        className="search__btn"
-      >
+      <div onClick={handleSearch} className="search__btn">
         <FontAwesomeIcon icon={faSearch} className="search__btn__icon" />
-      </Link>
+      </div>
     </div>
   );
 };

@@ -9,3 +9,18 @@
     }
   }
 }
+
+@media (max-width: 650px) {
+  .nav__bar {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .nav__logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-heading {
+    margin-bottom: 10px;
+  }
+}

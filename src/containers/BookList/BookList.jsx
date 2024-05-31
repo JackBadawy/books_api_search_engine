@@ -4,18 +4,7 @@ import BookCard from "../../components/BookCard/BookCard";
 import missingThumbnail from "../../img/missingThumbnail.png";
 
 const BookList = () => {
-  const {
-    searchTerm,
-    setSearchTerm,
-    searchString,
-    setSearchString,
-    updateSearchTerm,
-    setUpdateSearchTerm,
-    bookList,
-    setBookList,
-    bookListReady,
-    setBookListReady,
-  } = useContext(SearchContext);
+  const { bookList, bookListReady } = useContext(SearchContext);
 
   return (
     <main className="search__card-container">
@@ -44,6 +33,11 @@ const BookList = () => {
               book.volumeInfo
                 ? book.volumeInfo.description
                 : "Description not available"
+            }
+            publishedDate={
+              book.volumeInfo && book.volumeInfo.publishedDate
+                ? book.volumeInfo.publishedDate
+                : "Publication date not available"
             }
           />
         ))
