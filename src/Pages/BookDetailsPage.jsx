@@ -1,6 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
-import * as styles from "../styles.scss";
-import * as details from "../details.scss";
+import "../styles.scss";
+import "../details.scss";
 import logo from "../img/jack_logo.png";
 
 const BookDetailsPage = () => {

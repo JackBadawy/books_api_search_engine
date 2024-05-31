@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import SearchBar from "../components/SearchBar/SearchBar";
-import * as styles from "../styles.scss";
+import "../styles.scss";
 import logo from "../img/jack_logo.png";
 
 const LandingPage = () => {
