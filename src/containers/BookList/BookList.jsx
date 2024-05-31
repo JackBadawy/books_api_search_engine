@@ -1,17 +1,31 @@
+import { useContext, useEffect } from "react";
 import { SearchContext } from "../../Context/SearchContext";
-import { useContext } from "react";
 import BookCard from "../../components/BookCard/BookCard";
 import missingThumbnail from "../../img/missingThumbnail.png";
 
 const BookList = () => {
-  const { bookList, bookListReady } = useContext(SearchContext);
+  const { bookList, setBookList, bookListReady, setBookListReady } =
+    useContext(SearchContext);
+
+  useEffect(() => {
+    const savedBookList = localStorage.getItem("bookList");
+    if (savedBookList) {
+      setBookList(JSON.parse(savedBookList));
+      setBookListReady(true);
+    }
+  }, [setBookList, setBookListReady]);
+
+  useEffect(() => {
+    if (bookListReady) {
+      localStorage.setItem("bookList", JSON.stringify(bookList));
+    }
+  }, [bookList, bookListReady]);
 
   return (
     <main className="search__card-container">
       {!bookListReady ? (
         <p>Loading...</p>
       ) : (
-        bookListReady &&
         bookList &&
         bookList.map((book) => (
           <BookCard
@@ -35,9 +49,9 @@ const BookList = () => {
                 : "Description not available"
             }
             publishedDate={
-              book.volumeInfo && book.volumeInfo.publishedDate
+              book.volumeInfo
                 ? book.volumeInfo.publishedDate
-                : "Publication date not available"
+                : "Date not available"
             }
           />
         ))
